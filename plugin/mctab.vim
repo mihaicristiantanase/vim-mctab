@@ -17,8 +17,12 @@ function! MCTab()
     endfor
 
     let s .= '%' . tab . 'T'
-    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' [' . tab . '] '.bmod
+    if tab == tabpagenr()
+      let s .= '%#TabLineSel#%' . ' [' . tab . '] '
+    else
+      let s .= '%#TabLine#' . '  ' . tab . '  '
+    endif
+    let s .= bmod
   endfor
 
   let s .= '%#TabLineFill#'
