@@ -52,13 +52,8 @@ function! TablineToggleShowFun()
   let g:tablineToggleFunTimerId = timer_start(2000, 'TablineToggleFun', {'repeat': 1})
 endfunction
 
-" if tabline is showing, do autoclose
-if &showtabline == 2 || (&showtabline == 1 && tabpagenr('$') > 1)
-  call TablineToggleShowFun()
-endif
-
 function! TablineToggleFun(...)
-  if &showtabline == 0
+  if &showtabline == 0 || (&showtabline == 1 && tabpagenr('$') == 1)
     call TablineToggleShowFun()
   else
     call TablineToggleHideFun()
@@ -66,3 +61,8 @@ function! TablineToggleFun(...)
 endfunction
 nnoremap <silent> <F3> :call TablineToggleFun()<CR>
 tnoremap <silent> <F3> <C-w>:call TablineToggleFun()<CR>
+
+" if tabline is showing, do autoclose
+if &showtabline == 2 || (&showtabline == 1 && tabpagenr('$') > 1)
+  call TablineToggleShowFun()
+endif
