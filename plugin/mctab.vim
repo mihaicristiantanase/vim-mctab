@@ -7,7 +7,7 @@ function! MCTab()
     let tab = i + 1
     let winnr = tabpagewinnr(tab)
     let buflist = tabpagebuflist(tab)
-    let bmod = ''
+    let bmod = ' '
     for bufnr in buflist
       let isbmod = getbufvar(bufnr, "&mod")
       if isbmod == 1
@@ -18,11 +18,10 @@ function! MCTab()
 
     let s .= '%' . tab . 'T'
     if tab == tabpagenr()
-      let s .= '%#TabLineSel#%' . ' [' . tab . '] '
+      let s .= '%#TabLineSel#%' . ' [ ' . tab . bmod . ']'
     else
-      let s .= '%#TabLine#' . '  ' . tab . '  '
+      let s .= '%#TabLine#%' . '   ' . tab . bmod . ' '
     endif
-    let s .= bmod
   endfor
 
   let s .= '%#TabLineFill#'
