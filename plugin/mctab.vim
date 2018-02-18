@@ -53,7 +53,7 @@ function! TablineToggleShowFun()
 endfunction
 
 " if tabline is showing, do autoclose
-if &showtabline != 0
+if &showtabline == 2 || (&showtabline == 1 && tabpagenr('$') > 1)
   call TablineToggleShowFun()
 endif
 
