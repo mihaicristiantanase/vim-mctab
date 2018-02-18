@@ -18,3 +18,14 @@ second tab currently selected, the tabline will look like this
 ```c
   1  [ 2+]  3    4+
 ```
+
+### What is the motivation:
+Usually, tablines (standard or from other plugins) show the path of the buffer
+for the active window. This is fine as long as tabs are used with a single
+  window.
+
+But, when adding various number of splits per tab, this information becomes
+useless and takes too much space to display. The only real information that a
+tab with multiple windows can provide is it's number (to navigate quickly to
+it) and whether there are any unsaved modifications and this is what this
+plugin is all about.
