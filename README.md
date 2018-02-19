@@ -29,3 +29,15 @@ useless and takes too much space to display. The only real information that a
 tab with multiple windows can provide is it's number (to navigate quickly to
 it) and whether there are any unsaved modifications and this is what this
 plugin is all about.
+
+### How to install:
+
+Vundle<br/>
+`Plugin 'mihaicristiantanase/vim-mctab'`
+
+vim-plug<br/>
+`Plug 'mihaicristiantanase/vim-mctab'`
+
+Pathogen<br/>
+`git clone https://github.com/mihaicristiantanase/vim-mctab ~/.vim/bundle/vim-husk`
+
