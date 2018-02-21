@@ -39,5 +39,5 @@ vim-plug<br/>
 `Plug 'mihaicristiantanase/vim-mctab'`
 
 Pathogen<br/>
-`git clone https://github.com/mihaicristiantanase/vim-mctab ~/.vim/bundle/vim-husk`
+`git clone https://github.com/mihaicristiantanase/vim-mctab ~/.vim/bundle/vim-mctab`
 
